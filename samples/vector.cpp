@@ -45,9 +45,9 @@ auto main() -> int
 {
   auto phone_book = vector<Entry>
   { 
-    { "Marcin Hoppe",     111222333 },
-    { "Tomek Woroniecki", 222333444 },
-    { "Pawel Zieminski",  333444555 }
+    { "Marcin Hoppe",      111222333 },
+    { "Bjarne Stroustrup", 222333444 },
+    { "Herb Sutter",       333444555 }
   };
   
   print(phone_book);
