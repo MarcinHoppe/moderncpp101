@@ -1,0 +1,5 @@
+add_executable(naive naive.cpp)
+add_executable(ptr_container ptr_container.cpp)
+add_executable(smart_ptrs smart_ptrs.cpp)
+add_executable(with_copy with_copy.cpp)
+add_executable(with_move with_move.cpp)
