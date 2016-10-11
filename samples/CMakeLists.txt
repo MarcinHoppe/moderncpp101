@@ -2,6 +2,8 @@ cmake_minimum_required (VERSION 3.6)
 
 project(moderncpp101)
 
+include_directories( ..\\include )
+
 add_subdirectory(concurrency)
 add_subdirectory(res_mgmt)
 

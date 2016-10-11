@@ -20,13 +20,13 @@ auto protect_resource(int i, int j) -> void
 {
   auto p = new X;
   auto sp = unique_ptr<X> { new X };
-  
+
   if (i < 99) throw runtime_error { "in protect_resource" };
   if (j < 77) return;
-  
+
   p->do_something();
   sp->do_something();
-  
+
   delete p;
 }
 
@@ -34,7 +34,7 @@ struct Entry
 {
   string name;
   int phone;
-  
+
   Entry(string const & name_, int phone_) : name { name_ }, phone { phone_ } {}
 };
 
@@ -55,5 +55,6 @@ auto protect_shared_resource() -> void
 
 auto main() -> int
 {
-
+  //protect_resource(1, 1);
+  protect_shared_resource();
 }
