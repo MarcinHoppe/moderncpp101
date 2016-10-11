@@ -44,15 +44,15 @@ auto read() -> vector<Entry>
 auto main() -> int
 {
   auto phone_book = vector<Entry>
-  { 
+  {
     { "Marcin Hoppe",      111222333 },
     { "Bjarne Stroustrup", 222333444 },
     { "Herb Sutter",       333444555 }
   };
-  
+
   print(phone_book);
   print2(phone_book);
-  
+
   auto phone_book2 = read();
   print(phone_book2);
 }

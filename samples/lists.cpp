@@ -36,8 +36,8 @@ auto read() -> list<Entry>
 }
 
 auto add_and_remove(
-  list<Entry> & phone_book, 
-  Entry e, 
+  list<Entry> & phone_book,
+  Entry e,
   list<Entry>::iterator at,
   list<Entry>::iterator to_remove) -> void
 {
@@ -48,20 +48,20 @@ auto add_and_remove(
 auto main() -> int
 {
   auto phone_book = list<Entry>
-  { 
-    { "Marcin Hoppe",     111222333 },
-    { "Tomek Woroniecki", 222333444 },
-    { "Pawel Zieminski",  333444555 }
+  {
+    { "Marcin Hoppe",      111222333 },
+    { "Bjarne Stroustrup", 222333444 },
+    { "Herb Sutter",       333444555 }
   };
-  
+
   add_and_remove(
-    phone_book, 
+    phone_book,
     { "Bjarne S", 999999999 },
     phone_book.end(),
     phone_book.begin());
-  
+
   print(phone_book);
-  
+
   auto phone_book2 = read();
   print(phone_book2);
 }

@@ -44,19 +44,19 @@ auto operator<<(ostream& out, Entry const & e) -> ostream&
 auto main() -> int
 {
   auto phone_book = vector<Entry>
-  { 
-    { "Marcin Hoppe",     111222333 },
-    { "Tomek Woroniecki", 222333444 },
-    { "Pawel Zieminski",  333444555 },
-    { "Marcin Hoppe",     111222333 },
-    { "Pawel Zieminski",  333444555 }
+  {
+    { "Marcin Hoppe",      111222333 },
+    { "Bjarne Stroustrup", 222333444 },
+    { "Herb Sutter",       333444555 },
+    { "Marcin Hoppe",      111222333 },
+    { "Herb Sutter",       333444555 }
   };
-  
+
   sort(begin(phone_book), end(phone_book));
-  
+
   auto phone_list = list<Entry> {};
   unique_copy(begin(phone_book), end(phone_book), back_inserter(phone_list));
-  
+
   auto out = ostream_iterator<Entry> { cout, "\r\n" };
   copy(begin(phone_list), end(phone_list), out);
 }

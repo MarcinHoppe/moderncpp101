@@ -7,17 +7,17 @@ class Vector
 {
   int* ints;
   int size;
-  
+
 public:
   explicit Vector(int size_) : ints { new int[size_] }, size { size_ } {}
-  
+
   Vector(Vector const & rhs) : ints { new int[rhs.size] }, size { rhs.size }
   {
     cout << "a";
     for (auto i = 0; i != size; ++i)
       ints[i] = rhs.ints[i];
   }
-  
+
   auto operator=(Vector const & rhs) -> Vector &
   {
     cout << "b";
@@ -29,14 +29,14 @@ public:
     size = rhs.size;
     return *this;
   }
-  
+
   Vector(Vector && rhs) : ints { rhs.ints }, size { rhs.size }
   {
     cout << "c";
     rhs.ints = nullptr;
     rhs.size = 0;
   }
-  
+
   auto operator=(Vector && rhs) -> Vector &
   {
     cout << "d";
@@ -45,22 +45,22 @@ public:
     rhs.ints = nullptr;
     rhs.size = 0;
   }
-  
+
   auto operator[](int index) -> int &
   {
     return ints[index];
   }
-  
+
   auto operator[](int index) const -> int
   {
     return ints[index];
   }
-  
+
   auto get_size() const -> int
   {
     return size;
   }
-  
+
   ~Vector()
   {
     delete[] ints;
@@ -70,10 +70,10 @@ public:
 auto operator+(Vector const & lhs, Vector const & rhs) -> Vector
 {
   auto res = Vector { lhs.get_size() };
-  
+
   for (auto i = 0; i != lhs.get_size(); ++i)
     res[i] = lhs[i] + rhs[i];
-  
+
   return res;
 }
 

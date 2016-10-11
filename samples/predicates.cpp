@@ -15,11 +15,11 @@ using std::endl;
 struct greater_than
 {
   int value;
-  
+
   greater_than(int value_) : value { value_ }
   {
   }
-  
+
   auto operator()(pair<string, int> const & element) const -> bool
   {
     return element.second > value;
@@ -37,7 +37,7 @@ auto find_greater_than_20(map<string, int> & scores) -> void
 
 auto find_greater_than_limit(map<string, int> & scores, int score_limit) -> void
 {
-  auto pred = [score_limit](pair<string, int> const & element) -> bool 
+  auto pred = [score_limit](pair<string, int> const & element) -> bool
   {
     return element.second > score_limit;
   };
@@ -53,10 +53,10 @@ auto main() -> int
   auto scores = map<string, int>
   {
     { "Marcin", 10 },
-    { "Tomek" , 12 },
-    { "Pawel" , 33 }
+    { "Bjarne", 12 },
+    { "Herb",   33 }
   };
-  
+
   find_greater_than_20(scores);
-  find_greater_than_limit(scores, 20); 
+  find_greater_than_limit(scores, 20);
 }

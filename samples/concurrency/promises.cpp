@@ -4,7 +4,7 @@
 #include <numeric>
 #include <iostream>
 #include <functional>
- 
+
 using std::vector;
 using std::promise;
 using std::future;
@@ -14,15 +14,15 @@ using std::cout;
 using std::cerr;
 using std::endl;
 using std::accumulate;
- 
+
 using iter = vector<int>::iterator;
- 
+
 auto accum(iter first, iter last, promise<int> & accumulate_promise) -> void
 {
   auto sum = accumulate(first, last, 0);
   accumulate_promise.set_value(sum);
 }
- 
+
 int main()
 {
   auto ints = vector<int> { 1, 2, 3, 4, 5, 6 };

@@ -29,16 +29,16 @@ auto main() -> int
   auto first  = thread { f };
   auto second = thread { F() };
   auto third  = thread { l };
-  
+
   first.join();
   second.join();
   third.join();
-  
+
   auto sorter = [](vector<int> & ints) {
     sort(begin(ints), end(ints));
   };
-  auto ints = vector<int> { 
-    4, 5, 6, 7, 1, 2, 3, 8, 9 
+  auto ints = vector<int> {
+    4, 5, 6, 7, 1, 2, 3, 8, 9
   };
   auto sort_thread = thread { sorter, ref(ints) };
   sort_thread.detach();

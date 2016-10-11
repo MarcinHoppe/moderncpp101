@@ -2,7 +2,7 @@ class Vector
 {
   int* ints;
   int size;
-  
+
 public:
   explicit Vector(int size_) : ints { new int[size_] }, size { size_ } {}
   ~Vector()

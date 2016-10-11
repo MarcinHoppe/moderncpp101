@@ -21,7 +21,7 @@ auto get_even_random_number() -> optional<int>
 auto main() -> int
 {
   srand(static_cast<unsigned int>(time(0)));
-  
+
   optional<int> i = get_even_random_number();
   if (i)
     cout << *i << endl;

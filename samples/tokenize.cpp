@@ -15,7 +15,7 @@ auto print_tokens(string const & s) -> void
   using tokenizer = tokenizer<char_separator<char>>;
   auto sep = char_separator<char> { " _" };
   auto tokens = tokenizer { s, sep };
-  
+
   for (auto const & token : tokens)
   {
     cout << token << endl;
@@ -28,7 +28,7 @@ auto print_tokens2(string const & s) -> void
   int offsets[] = { 2, 1, 3 };
   auto sep = offset_separator { offsets, offsets + 3 };
   auto tokens = tokenizer { s, sep };
-  
+
   for (auto const & token : tokens)
   {
     cout << token << endl;
