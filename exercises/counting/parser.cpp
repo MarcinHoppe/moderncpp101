@@ -1,10 +1,10 @@
 // Zadanie:
 // Nalezy sparsowac kazda linie logu, ktora wyglada tak:
-// 
+//
 // 2012-02-03 18:35:34 SampleClass2 [TRACE] verbose detail for id 1559025043
-// 
+//
 // i wypisac na ekran jedynie to, ile razy wystapilo zdarzenie na danym poziomie:
-// 
+//
 // [TRACE] 732
 // [DEBUG] 1500
 // [INFO] 7
@@ -39,10 +39,10 @@ auto is_match(smatch const & matches) -> bool
 auto make_log_event(smatch const & matches) -> LogEvent
 {
   auto event = LogEvent {};
-  
+
   event.source = matches[1].str();
   event.level = matches[2].str();
-  
+
   return event;
 }
 
@@ -51,7 +51,7 @@ auto main() -> int
   auto const pattern = regex { R"((SampleClass[0-9])\s+\[([A-Z]+)\])" };
 
   // ...
-  
+
   for (string line; getline(cin, line);)
   {
     smatch matches;
@@ -64,6 +64,6 @@ auto main() -> int
       }
     }
   }
-  
+
   // ...
 }

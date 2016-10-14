@@ -1,12 +1,12 @@
 // Zadanie:
 // Nalezy sparsowac kazda linie logu, ktora wyglada tak:
-// 
+//
 // 2012-02-03 18:35:34 SampleClass2 [TRACE] verbose detail for id 1559025043
-// 
+//
 // i wypisac na ekran jedynie zrodlo i poziom, na ktorym zalogowano zdarzenie:
-// 
+//
 // [TRACE] SampleClass2
-// 
+//
 // Podpowiedz: (SampleClass[0-9])\s+\[([A-Z]+)\]
 
 #include <iostream>
@@ -29,6 +29,7 @@ struct LogEvent
 auto operator<<(ostream & out, LogEvent const & event) -> ostream &
 {
   out << "[" << event.level << "] " << event.source;
+	return out;
 }
 
 auto main() -> int

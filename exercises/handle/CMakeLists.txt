@@ -1,1 +1,5 @@
-add_executable(handle handle.cpp)
+if(WIN32)
+    add_executable(handle handle_win.cpp)
+else()
+    add_executable(handle handle.cpp)
+endif()
