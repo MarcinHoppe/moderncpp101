@@ -13,7 +13,7 @@ using std::endl;
 
 auto main() -> int
 {
-  auto dll_handle = ::LoadLibrary("cygSharedLibrary.dll");
+  auto dll_handle = ::LoadLibrary("SharedLibrary.dll");
 
   init_or_release_t init = (init_or_release_t) ::GetProcAddress(dll_handle, "Init");
   init_or_release_t release = (init_or_release_t) ::GetProcAddress(dll_handle, "Release");
