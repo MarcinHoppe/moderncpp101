@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.6)
 
-project(moderncpp101)
+project(moderncpp101_samples)
 
 include_directories( ..\\include )
 
