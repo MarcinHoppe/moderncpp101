@@ -34,7 +34,7 @@ TEST_CASE( "vectors can be resized", "[vector]" )
   }
 }
 
-TEST_CASE( "testing boost::gather", "[boost]" )
+TEST_CASE( "testing std::set_symmetric_difference", "[std]" )
 {
   // http://en.cppreference.com/w/cpp/algorithm/set_symmetric_difference
 }
